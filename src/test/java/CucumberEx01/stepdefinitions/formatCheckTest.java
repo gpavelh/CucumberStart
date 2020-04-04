@@ -9,6 +9,8 @@ import io.cucumber.java.ru.Допустим;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
+import java.util.Spliterator;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -33,11 +35,11 @@ public class formatCheckTest {
         codeZoneSelenide.enterAuthCode(code);
     }
 
-    @Допустим("Перейти на страницу \"Обзор\"")
-    public void goToViewPage() {
+    @Допустим("Перейти на страницу {string}")
+    public void goToViewPage(String page) {
         MainPageSelenide mainPage = new MainPageSelenide();
         $(By.xpath("//div[contains(text(),'Генеральная лицензия Банка России')]")).shouldHave(text("Генеральная лицензия Банка России"));
-        mainPage.goToViewPage();
+        mainPage.goToViewPage(page);
     }
 
     @Допустим("Навести курсор на сумму в блоке \"Финансовая свобода\"")

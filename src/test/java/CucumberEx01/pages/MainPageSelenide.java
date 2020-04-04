@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class MainPageSelenide {
 
-    public void goToViewPage() {
-        $(By.xpath("//a[@id='bank-overview' and .= 'Обзор']")).click();
+    public void goToViewPage(String page) {
+        $(By.xpath("//a[@id='bank-overview' and .= '"+page+"']")).click();
     }
 }
