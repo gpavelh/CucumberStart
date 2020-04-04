@@ -15,21 +15,22 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class formatCheckTest {
     @Допустим("Пользователь заходит на сайт банка")
-    public void openSite(){
+    public void openSite() {
         open("https://idemo.bspb.ru:");
     }
-    @Допустим("Проверить язык и сменить если потребуется и залогиниться")
-    public void checkLang() {
+
+    @Допустим("Проверить язык и сменить если потребуется и залогиниться используя логин {string} и пароль {string}")
+    public void checkLang(String log, String pass) {
         LoginSelenide loginSelenide = new LoginSelenide();
         loginSelenide.checkLang();
-        loginSelenide.loginToSite("demo", "demo");
+        loginSelenide.loginToSite(log, pass);
     }
 
-    @Допустим("Веести код авторизации")
-    public void enterAuthCode() {
+    @Допустим("Веести код авторизации {string}")
+    public void enterAuthCode(String code) {
         CodeZoneSelenide codeZoneSelenide = new CodeZoneSelenide();
         $(By.id("otp-code-text")).shouldHave(text(("был отправлен код подтверждения, введите его для входа")));
-        codeZoneSelenide.enterAuthCode("0000");
+        codeZoneSelenide.enterAuthCode(code);
     }
 
     @Допустим("Перейти на страницу \"Обзор\"")
@@ -48,9 +49,8 @@ public class formatCheckTest {
     }
 
     @Допустим("Проверить формат суммы")
-    public void amountFormatCheck() throws InterruptedException {
+    public void amountFormatCheck() {
         ViewPageSelenide viewPage = new ViewPageSelenide();
         viewPage.myMoney.shouldBe(Condition.matchesText("\\d{0,3}\\s\\d{0,3}\\s\\d{0,3}\\.\\d{0,2}\\s\\D"));
-        Thread.sleep(5000);
     }
 }
