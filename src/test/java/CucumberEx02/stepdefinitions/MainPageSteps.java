@@ -7,6 +7,7 @@ import io.cucumber.java.ru.Допустим;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class MainPageSteps {
     MainPage mainPage = new MainPage();
@@ -14,7 +15,7 @@ public class MainPageSteps {
     @Step("Переход на сайт Сбербанка")
     @Допустим("пользователь заходит на сайт СберБанка")
     public void goToSberPage() {
-        Selenide.open("https://www.sberbank.ru");
+        open("https://www.sberbank.ru");
     }
 
     @Step("Проверка языка")
