@@ -9,13 +9,11 @@ import io.cucumber.java.ru.Допустим;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-import java.util.Spliterator;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class formatCheckTest {
+public class FormatCheckTest {
     @Допустим("Пользователь заходит на сайт банка")
     public void openSite() {
         open("https://idemo.bspb.ru:");
