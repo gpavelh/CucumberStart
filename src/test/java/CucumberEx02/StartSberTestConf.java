@@ -1,4 +1,4 @@
-package CucumberEx02;
+package CucumberEx02; //Домашка 27
 
 import com.codeborne.selenide.Configuration;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
         features = "src/test/resources/feature/ex02",
         glue = {"CucumberEx02.stepdefinitions"}
 )
-public class StartTestConf extends AbstractTestNGCucumberTests {
+public class StartSberTestConf extends AbstractTestNGCucumberTests {
 
     @BeforeMethod
     public void selenideConfigure() {

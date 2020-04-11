@@ -1,4 +1,4 @@
-package CucumberEx03;
+package CucumberEx03; //Домашка 28
 
 import com.codeborne.selenide.Configuration;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
