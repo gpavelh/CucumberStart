@@ -1,11 +1,11 @@
 package CucumberEx03.stepdefinitions;
 
 import CucumberEx03.pages.MainPage;
-import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.WebDriverRunner;
 import io.cucumber.java.ru.Допустим;
 import io.qameta.allure.Step;
+import org.testng.Assert;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class MainPageSteps {
@@ -18,7 +18,9 @@ public class MainPageSteps {
     @Допустим("пользователь заходит на авто.ру")
     public void openSite() {
         open("https://auto.ru/");
-        $("title").shouldHave(Condition.attribute("text", "Авто.ру: купить, продать и обменять машину"));
+        Assert.assertTrue(WebDriverRunner.getWebDriver().getTitle().contains("Авто.ру:"));
+        mainPage.closeStupidWindow();
+        mainPage.locationMoscow();
     }
 
     @Step("Нажимаем на кнопку \"Все марки\"")
