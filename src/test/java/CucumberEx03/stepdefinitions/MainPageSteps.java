@@ -30,14 +30,14 @@ public class MainPageSteps {
     }
 
     @Step("Сохраняем кол-во объявлений по марке {string}")
-    @Допустим("^сохраняет кол-во авто в объявлении по марке (.*)")
+    @Допустим("сохраняет кол-во авто в объявлении по марке {string}")
     public void saveCountAd(String brand) {
         countAd = mainPage.getCarAd(brand);
         System.out.println("Количество объявлений по марке на главной " + brand + ": " + countAd);
     }
 
     @Step("Переходим на страницу марки {string}")
-    @Допустим("^нажимает на кнопку с маркой автомобиля (.*)")
+    @Допустим("нажимает на кнопку с маркой автомобиля {string}")
     public void goToCarBrandPage(String brand) {
         mainPage.carBrandPage(brand).click();
     }

@@ -22,14 +22,14 @@ public class BrandPageSteps {
     }
 
     @Step("Сохраняем кол-во объявлений по модели {string}")
-    @Допустим("^сохраняет кол-во авто в объявлении по модели (.*)")
+    @Допустим("сохраняет кол-во авто в объявлении по модели {string}")
     public void saveModelCount(String model) {
         modelCount = brandPage.getModelCount(model);
         System.out.println("Количество объявлений по модели " + model + " на странице бренда : " + modelCount);
     }
 
     @Step("Переходим на страницу модели {string}")
-    @Допустим("^нажимает на кнопку с моделью (.*)")
+    @Допустим("нажимает на кнопку с моделью {string}")
     public void goToModelPage(String model) {
         brandPage.modelPage(model).click();
     }
