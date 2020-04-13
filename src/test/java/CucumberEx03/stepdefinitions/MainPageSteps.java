@@ -4,12 +4,15 @@ import CucumberEx03.pages.MainPage;
 import com.codeborne.selenide.WebDriverRunner;
 import io.cucumber.java.ru.Допустим;
 import io.qameta.allure.Step;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.open;
 
 public class MainPageSteps {
 
+    private static final Logger LOG = LoggerFactory.getLogger(MainPageSteps.class);
     public static String countAd;
 
     MainPage mainPage = new MainPage();
@@ -33,7 +36,7 @@ public class MainPageSteps {
     @Допустим("сохраняет кол-во авто в объявлении по марке {string}")
     public void saveCountAd(String brand) {
         countAd = mainPage.getCarAd(brand);
-        System.out.println("Количество объявлений по марке на главной " + brand + ": " + countAd);
+        LOG.info("Количество объявлений по марке на главной " + brand + ": " + countAd);
     }
 
     @Step("Переходим на страницу марки {string}")

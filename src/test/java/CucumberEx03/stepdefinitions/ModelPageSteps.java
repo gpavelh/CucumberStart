@@ -5,10 +5,13 @@ import CucumberEx03.pages.ModelPage;
 import com.codeborne.selenide.Condition;
 import io.cucumber.java.ru.Допустим;
 import io.qameta.allure.Step;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
 public class ModelPageSteps {
 
+    private static final Logger LOG = LoggerFactory.getLogger(ModelPageSteps.class);
     ModelPage modelPage = new ModelPage();
 
     @Step("Сравниваем значение полученное на главной со значением указанным на кнопке \"Показать\"")
@@ -17,6 +20,6 @@ public class ModelPageSteps {
         modelPage.modelPageViewButton.shouldBe(Condition.visible);
         BrandPageSteps brandPageSteps = new BrandPageSteps();
         Assert.assertEquals(brandPageSteps.modelCount,modelPage.adModelCount());
-        System.out.println("Количество объявлений по модели на странице модели : " + modelPage.adModelCount());
+        LOG.info("Количество объявлений по модели на странице модели : " + modelPage.adModelCount());
     }
 }

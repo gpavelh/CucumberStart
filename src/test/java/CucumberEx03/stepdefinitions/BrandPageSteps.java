@@ -4,10 +4,13 @@ import CucumberEx03.pages.BrandPage;
 import com.codeborne.selenide.Condition;
 import io.cucumber.java.ru.Допустим;
 import io.qameta.allure.Step;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
 public class BrandPageSteps {
 
+    private static final Logger LOG = LoggerFactory.getLogger(BrandPageSteps.class);
     public static String modelCount;
 
     BrandPage brandPage = new BrandPage();
@@ -18,14 +21,14 @@ public class BrandPageSteps {
         brandPage.brandPageViewButton.shouldBe(Condition.visible);
         MainPageSteps mainPageSteps = new MainPageSteps();
         Assert.assertEquals(mainPageSteps.countAd, brandPage.adCount());
-        System.out.println("Количество объявлений по марке на странице бренда : " + brandPage.adCount());
+        LOG.info("Количество объявлений по марке на странице бренда : " + brandPage.adCount());
     }
 
     @Step("Сохраняем кол-во объявлений по модели {string}")
     @Допустим("сохраняет кол-во авто в объявлении по модели {string}")
     public void saveModelCount(String model) {
         modelCount = brandPage.getModelCount(model);
-        System.out.println("Количество объявлений по модели " + model + " на странице бренда : " + modelCount);
+        LOG.info("Количество объявлений по модели " + model + " на странице бренда : " + modelCount);
     }
 
     @Step("Переходим на страницу модели {string}")
