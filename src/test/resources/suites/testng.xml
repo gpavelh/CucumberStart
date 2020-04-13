@@ -3,7 +3,7 @@
 <suite name="TestNG">
     <test name="TestNG case">
         <classes>
-            <class name="CucumberEx03.StartAutoRuTestConf"/>
+            <class name="CucumberEx04.StartPageTestConf"/>
  <!--           <class name="org.pavel.SecondAppTest"/>-->
         </classes>
     </test>
