@@ -1,4 +1,4 @@
-package CucumberEx04; //Домашка 28
+package CucumberEx04; //Домашка 29
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
