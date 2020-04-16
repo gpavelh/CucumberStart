@@ -14,6 +14,6 @@ public class DepositsControlSteps {
         depositsControl
                 .getTitle()
                 .shouldHave(Condition.attribute("text", titleName));
-        depositsControl.pageName.shouldHave(Condition.text("displayed:false"));
+        depositsControl.pageName.shouldHave(Condition.text("pageContent"));
     }
 }
