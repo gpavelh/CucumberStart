@@ -16,7 +16,7 @@ import org.testng.annotations.BeforeMethod;
                 "CucumberEx04.stepdefinitionsAutoRuTest",
                 "CucumberEx04.stepdefinitionsSberTest"
         },
-        tags = "@AutoRuAdTest and @second"
+        tags = "@AutoRuAdTest and @first"
 )
 public class StartPageTestConf extends AbstractTestNGCucumberTests {
 
