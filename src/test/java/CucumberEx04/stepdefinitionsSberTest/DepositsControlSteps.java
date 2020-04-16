@@ -13,7 +13,7 @@ public class DepositsControlSteps {
         DepositsControl depositsControl = new DepositsControl();
         depositsControl
                 .getTitle()
-                .shouldHave(Condition.attribute("text", titleName));
+                .shouldHave(Condition.attribute("text", titleName)).waitUntil(Condition.visible,10000);
         depositsControl.pageName.shouldHave(Condition.text(pageContent));
     }
 }

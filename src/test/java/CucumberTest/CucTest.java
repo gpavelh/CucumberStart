@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 
 @CucumberOptions(
         plugin = "json:target/cucumber-report.json",
-        features = "src/test/resources/feature",
+        features = "src/test/resources/feature/test",
         glue = {"CucumberTest.definitions"}
 )
 public class CucTest extends AbstractTestNGCucumberTests {
