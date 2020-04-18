@@ -9,12 +9,11 @@ public class DepositsControlSteps {
 
     @Step("Проверка нахождения на странице \"Вклад управляй\"")
     @Допустим("проверка нахождения на странице {string} и инфой по вкладу {string}")
-    public void checkDepositsControlPage(String titleName, String pageContent) throws InterruptedException {
+    public void checkDepositsControlPage(String titleName, String pageContent) {
         DepositsControl depositsControl = new DepositsControl();
         depositsControl
                 .getTitle()
                 .shouldHave(Condition.attribute("text", titleName));
-        Thread.sleep(50000);
         depositsControl.pageName.shouldHave(Condition.text(pageContent));
     }
 }
