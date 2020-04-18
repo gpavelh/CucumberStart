@@ -1,15 +1,17 @@
 pipeline{
     agent any
     stages{
-      steps {
-        sh 'mvn clean'
+        stage('Clean'){
+            steps {
+                sh 'mvn clean'
       }
     }
-    stage('Test') {
-      steps{
-        sh 'mvn test'
-      }
-    }
+        stage('Test') {
+            steps{
+                sh 'mvn test'
+          }
+        }
+     }
 post{
 always{
   script{
@@ -20,7 +22,6 @@ always{
           reportBuildPolicy:'ALWAYS',
           results: [[path: 'target/allure-results']]
         ])
-
       }
     }
   }
