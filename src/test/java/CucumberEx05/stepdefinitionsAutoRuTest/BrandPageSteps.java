@@ -3,6 +3,7 @@ package CucumberEx05.stepdefinitionsAutoRuTest;
 import CucumberEx05.pagesAutoRuTest.BrandPage;
 import com.codeborne.selenide.Condition;
 import io.cucumber.java.ru.Допустим;
+import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +16,7 @@ public class BrandPageSteps {
 
     BrandPage brandPage = new BrandPage();
 
-    @Step("Сравниваем значение полученное на главной со значением указанным на кнопке \"Показать\"")
+    @Description("Сравниваем значение полученное на главной со значением указанным на кнопке \"Показать\"")
     @Допустим("и сравнивает полученое значение с кол-ом объявлений по марке в кнопке \"Показать\"")
     public void getAdCount() {
         brandPage.brandPageViewButton.shouldBe(Condition.visible);
@@ -24,14 +25,14 @@ public class BrandPageSteps {
         LOG.info("Количество объявлений по марке на странице бренда : " + brandPage.adCount());
     }
 
-    @Step("Сохраняем кол-во объявлений по модели {string}")
+    @Description("Сохраняем кол-во объявлений по модели {string}")
     @Допустим("сохраняет кол-во авто в объявлении по модели {string}")
     public void saveModelCount(String model) {
         modelCount = brandPage.getModelCount(model);
         LOG.info("Количество объявлений по модели " + model + " на странице бренда : " + modelCount);
     }
 
-    @Step("Переходим на страницу модели {string}")
+    @Description("Переходим на страницу модели {string}")
     @Допустим("нажимает на кнопку с моделью {string}")
     public void goToModelPage(String model) {
         brandPage.modelPage(model).click();
