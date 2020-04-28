@@ -9,6 +9,8 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+
 @CucumberOptions(
         plugin = "json:target/cucumber-report.json",
         features = "src/test/resources/feature/ex04",
@@ -30,6 +32,6 @@ public class StartPageTestConf extends AbstractTestNGCucumberTests {
 
     @AfterMethod
     void closeDriver() {
-        WebDriverRunner.getWebDriver().close();
+        closeWebDriver();
     }
 }
