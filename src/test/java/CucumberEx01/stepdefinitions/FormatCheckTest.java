@@ -14,6 +14,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class FormatCheckTest {
+
     @Допустим("Пользователь заходит на сайт банка")
     public void openSite() {
         open("https://idemo.bspb.ru:");

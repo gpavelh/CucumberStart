@@ -27,7 +27,7 @@ public class MainPageSteps {
 
     @Description("Переход на страницу \"Вклады\"")
     @Допустим("на верхней панеле наводит на {string} и в выпадающем меню нажимает на кнопку {string}")
-    public void goToTab(String topMenu, String dropOutMenu) throws InterruptedException {
+    public void goToTab(String topMenu, String dropOutMenu) {
         mainPage.findTopMenuElement(topMenu).hover();
         mainPage.findDropOutMenuElement(dropOutMenu).click();
         $("title").shouldHave(Condition.attribute("text", "«Сбербанк» - Подбор вкладов"));
