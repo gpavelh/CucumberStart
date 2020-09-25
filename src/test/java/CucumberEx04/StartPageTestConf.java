@@ -18,7 +18,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
                 "CucumberEx04.stepdefinitionsAutoRuTest",
                 "CucumberEx04.stepdefinitionsSberTest"
         },
-        tags = "(@AutoRuAdTest and @second) or @SberDepTest"
+        tags = "@AutoRuAdTest"
 )
 public class StartPageTestConf extends AbstractTestNGCucumberTests {
 
@@ -26,6 +26,7 @@ public class StartPageTestConf extends AbstractTestNGCucumberTests {
     public void selenideConfigure() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
         Configuration.browser = "chrome";
+        Configuration.timeout = 7000;
         Configuration.clickViaJs = true;
         Configuration.startMaximized = true;
     }

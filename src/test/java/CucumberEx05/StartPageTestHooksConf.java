@@ -20,7 +20,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
                 "CucumberEx05.stepdefinitionsAutoRuTest",
                 "CucumberEx05.stepdefinitionsSberTest"
         },
-        tags = "(@AutoRuAdTest and @second) or @SberDepTest"
+        tags = "@AutoRuAdTest"
 )
 public class StartPageTestHooksConf extends AbstractTestNGCucumberTests {
 

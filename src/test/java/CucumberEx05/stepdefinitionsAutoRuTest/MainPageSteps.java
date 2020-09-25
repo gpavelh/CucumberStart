@@ -4,7 +4,6 @@ import CucumberEx05.pagesAutoRuTest.MainPage;
 import com.codeborne.selenide.WebDriverRunner;
 import io.cucumber.java.ru.Допустим;
 import io.qameta.allure.Description;
-import io.qameta.allure.Step;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
@@ -23,7 +22,7 @@ public class MainPageSteps {
     public void openSite() {
         open("https://auto.ru/");
         Assert.assertTrue(WebDriverRunner.getWebDriver().getTitle().contains("Авто.ру:"));
-        mainPage.closeStupidWindow();
+//        mainPage.closeStupidWindow();
         mainPage.locationMoscow();
     }
 
