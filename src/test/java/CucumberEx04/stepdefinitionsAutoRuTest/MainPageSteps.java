@@ -23,7 +23,7 @@ public class MainPageSteps {
     public void openSite() {
         open("https://auto.ru/");
         Assert.assertTrue(WebDriverRunner.getWebDriver().getTitle().contains("Авто.ру:"));
-        mainPage.closeStupidWindow();
+//        mainPage.closeStupidWindow();
         mainPage.locationMoscow();
     }
 
